@@ -16,10 +16,9 @@ The project pipeline converts raw deal text into structured deal briefs in three
 ```mermaid
 
 graph LR
-    A[Source Data] --> B{Pipeline Function}
+    A[Source Data] --> C[validate & Clean]
     subgraph Process [Internal Logic]
-    B --> C[Extract/Ingest]
-    C --> D[Transform & Clean]
+    C --> D[Extract/Ingest]
     D --> E[Validate/Schema Check]
     end
     E --> F[Destination/Load]
