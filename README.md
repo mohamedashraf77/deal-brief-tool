@@ -13,6 +13,17 @@ The project pipeline converts raw deal text into structured deal briefs in three
    - Successful extractions are stored in a SQLite database.  
    - Errors (invalid JSON or other exceptions) are logged with details for review.
 
+```mermaid
+graph LR
+    A[Source Data] --> B{Pipeline Function}
+    subgraph Process [Internal Logic]
+    B --> C[Extract/Ingest]
+    C --> D[Transform & Clean]
+    D --> E[Validate/Schema Check]
+    end
+    E --> F[Destination/Load]
+    F --> G[(Database/Warehouse)]
+
 ### Running Locally
 - Backend: `cd service && uv run main.py`  
 - Frontend: `cd frontend && npm start`  
