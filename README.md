@@ -14,6 +14,7 @@ The project pipeline converts raw deal text into structured deal briefs in three
    - Errors (invalid JSON or other exceptions) are logged with details for review.
 
 ```mermaid
+
 graph LR
     A[Source Data] --> B{Pipeline Function}
     subgraph Process [Internal Logic]
@@ -23,6 +24,8 @@ graph LR
     end
     E --> F[Destination/Load]
     F --> G[(Database/Warehouse)]
+
+
 ```
 
 ### Running Locally
