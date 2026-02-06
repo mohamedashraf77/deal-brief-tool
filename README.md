@@ -23,6 +23,7 @@ graph LR
     end
     E --> F[Destination/Load]
     F --> G[(Database/Warehouse)]
+```
 
 ### Running Locally
 - Backend: `cd service && uv run main.py`  
